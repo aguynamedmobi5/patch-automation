@@ -257,7 +257,7 @@ def overall_status(findings: dict) -> str:
 
 # ── Run comparison for all instances in S3 ───────────────────
 
-def run_comparison(s3_client, date_str: str) -> Tuple[list[dict], Optional[str]]:
+def run_comparison(s3_client, date_str: str) -> Tuple[List[dict], Optional[str]]:
     """
     Loads post and post-reboot JSONs from S3, runs comparison,
     uploads per-instance diff HTML + summary.

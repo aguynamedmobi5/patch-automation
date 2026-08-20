@@ -78,7 +78,7 @@ def capture_instance(ssm_client, instance_info: dict,
 
 
 def run_capture(ssm_client, s3_client, instances: List[dict],
-                phase: str, timestamp: str) -> Tuple[list[dict], str]:
+                phase: str, timestamp: str) -> Tuple[List[dict], str]:
     """
     Runs capture for all instances, uploads JSON + HTML to S3.
     Returns (all_results, summary_s3_key).

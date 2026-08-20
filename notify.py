@@ -6,6 +6,7 @@ Sends capture completion and final diff result emails.
 """
 
 import boto3
+from typing import List
 from datetime import datetime, timezone
 from botocore.exceptions import ClientError
 
@@ -31,8 +32,8 @@ def _publish(sns_client, subject: str, message: str):
 
 
 def send_capture_complete(sns_client, phase: str, date_str: str,
-                           instances: list[dict], summary_key: str,
-                           all_results: list[dict]):
+                           instances: List[dict], summary_key: str,
+                           all_results: List[dict]):
     """
     Sends a notification after a capture phase completes.
     Includes summary stats and a pre-signed link to the HTML report.
@@ -97,7 +98,7 @@ TTN MSP Team | {AWS_REGION}
 
 
 def send_diff_complete(sns_client, date_str: str,
-                        all_results: list[dict],
+                        all_results: List[dict],
                         diff_summary_key: str):
     """
     Sends the final diff comparison result email after post-reboot capture
